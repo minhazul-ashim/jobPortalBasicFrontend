@@ -41,7 +41,7 @@ async function submitJob(e) {
   const location = formData.get("location");
   const company = formData.get("company");
   const jobType = formData.get("jobType");
-  const postedBy = localStorage.getItem("user_id");
+  const postedBy = JSON.parse(localStorage.getItem("user")).user.id;
 
   const obj = {
     title,
@@ -82,7 +82,7 @@ async function submitProfile(e) {
   const phone = formData.get("phone");
   const email = formData.get("email");
   const obj = {
-    id: localStorage.getItem("user_id"),
+    id: JSON.parse(localStorage.getItem("user_id")),
     user: {
       username,
       first_name,

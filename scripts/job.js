@@ -54,8 +54,7 @@ async function getJobDetails() {
             <span class="font-bold">Job Description :</span>  ${new Date(
               data.postedAt
             ).toLocaleString()}
-        </p>
-        <a onclick="applyJob({
+        </p><a onclick="applyJob({
           user: ${JSON.parse(localStorage.getItem("user")).user.id},
           job: ${data.id}
         })" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-md mt-8 inline-block cursor-pointer">

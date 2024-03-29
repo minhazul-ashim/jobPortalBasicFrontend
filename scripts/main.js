@@ -4,7 +4,7 @@ window.onload = () => {
 };
 
 function genCatCard(container, cat) {
-  const card = `<li class="py-2 px-4 hover:bg-gray-100 cursor-pointer">
+  const card = `<li class="py-2 px-4 hover:bg-gray-100 cursor-pointer" onclick="getCategoriezedJobs(${cat.id})">
                 ${cat.name}
               </li>`;
   container.insertAdjacentHTML("beforeend", card);
@@ -63,5 +63,20 @@ async function injectJobs() {
   });
   const data = await res.json();
   const container = document.getElementById("jobContainer");
+  data.forEach((el) => genJobCard(container, el));
+}
+
+async function getCategoriezedJobs(id) {
+  const url = `http://127.0.0.1:8000/job/category/${id}`;
+  const res = await fetch(url, {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+      "Access-Control-Allow-Origin": "http://127.0.0.1:5500",
+    },
+  });
+  const data = await res.json();
+  const container = document.getElementById("jobContainer");
+  container.innerHTML = null;
   data.forEach((el) => genJobCard(container, el));
 }
