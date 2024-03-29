@@ -29,7 +29,7 @@ async function submitForm(e) {
     confirm_pass,
   };
 
-  const url = "http://127.0.0.1:8000/account/register/";
+  const url = "https://drf-basics.onrender.com/account/register/";
   const res = await fetch(url, {
     method: "POST",
     headers: {

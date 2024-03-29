@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 async function logout(e) {
   e.preventDefault();
-  const url = "http://127.0.0.1:8000/auth/logout/";
+  const url = "https://drf-basics.onrender.com/auth/logout/";
   const res = await fetch(url, {
     method: "GET",
     headers: {
@@ -35,7 +35,7 @@ async function submitForm(e) {
     password,
   };
 
-  const url = "http://127.0.0.1:8000/auth/login/";
+  const url = "https://drf-basics.onrender.com/auth/login/";
   const res = await fetch(url, {
     method: "POST",
     headers: {
@@ -47,7 +47,7 @@ async function submitForm(e) {
   const data = await res.json();
   if (data.token) {
     window.alert("You are successfully logged in");
-    const url = `http://127.0.0.1:8000/account/${data.userId}/`;
+    const url = `https://drf-basics.onrender.com/account/${data.userId}/`;
     const res = await fetch(url, {
       method: "GET",
       headers: {

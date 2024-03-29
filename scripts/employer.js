@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 window.onload = async () => {
-  const url = "http://127.0.0.1:8000/category";
+  const url = "https://drf-basics.onrender.com/category";
   const res = await fetch(url, {
     method: "GET",
     headers: {
@@ -55,7 +55,7 @@ async function submitJob(e) {
 
   console.log(obj);
 
-  const url = "http://127.0.0.1:8000/jobs/";
+  const url = "https://drf-basics.onrender.com/jobs/";
   const res = await fetch(url, {
     method: "POST",
     headers: {
@@ -94,7 +94,7 @@ async function submitProfile(e) {
     accType: "employer",
   };
   console.log(obj);
-  const url = "http://127.0.0.1:8000/account/update/";
+  const url = "https://drf-basics.onrender.com/account/update/";
   const res = await fetch(url, {
     method: "PUT",
     headers: {

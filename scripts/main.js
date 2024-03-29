@@ -11,7 +11,7 @@ function genCatCard(container, cat) {
 }
 
 async function injectCats() {
-  const url = "http://127.0.0.1:8000/category";
+  const url = "https://drf-basics.onrender.com/category";
   const res = await fetch(url, {
     method: "GET",
     headers: {
@@ -53,7 +53,7 @@ function genJobCard(container, job) {
 }
 
 async function injectJobs() {
-  const url = "http://127.0.0.1:8000/jobs";
+  const url = "https://drf-basics.onrender.com/jobs";
   const res = await fetch(url, {
     method: "GET",
     headers: {
@@ -67,7 +67,7 @@ async function injectJobs() {
 }
 
 async function getCategoriezedJobs(id) {
-  const url = `http://127.0.0.1:8000/job/category/${id}`;
+  const url = `https://drf-basics.onrender.com/job/category/${id}`;
   const res = await fetch(url, {
     method: "GET",
     headers: {

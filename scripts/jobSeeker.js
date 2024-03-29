@@ -34,7 +34,7 @@ async function submitProfile(e) {
     accType: "employer",
   };
   console.log(obj);
-  const url = "http://127.0.0.1:8000/account/update/";
+  const url = "https://drf-basics.onrender.com/account/update/";
   const res = await fetch(url, {
     method: "PUT",
     headers: {

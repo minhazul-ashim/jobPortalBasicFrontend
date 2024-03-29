@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 async function logout(e) {
   e.preventDefault();
-  const url = "http://127.0.0.1:8000/auth/logout/";
+  const url = "https://drf-basics.onrender.com/auth/logout/";
   const res = await fetch(url, {
     method: "GET",
     headers: {
@@ -22,8 +22,8 @@ async function logout(e) {
     },
   });
   if (res.status === 200) {
-      window.localStorage.clear();
-      window.location.reload();
+    window.localStorage.clear();
+    window.location.reload();
   }
 }
 
@@ -58,7 +58,7 @@ const resetUserDetails = async () => {
   if (!userId) {
     return;
   }
-  const url = `http://127.0.0.1:8000/account/${userId}/`;
+  const url = `https://drf-basics.onrender.com/account/${userId}/`;
   const res = await fetch(url, {
     method: "GET",
     headers: {

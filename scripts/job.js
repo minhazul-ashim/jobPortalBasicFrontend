@@ -4,7 +4,7 @@ window.onload = () => {
 
 const applyJob = async (obj) => {
   console.log(obj);
-  const url = "http://127.0.0.1:8000/application/";
+  const url = "https://drf-basics.onrender.com/application/";
   const res = await fetch(url, {
     method: "POST",
     headers: {
@@ -22,7 +22,7 @@ const applyJob = async (obj) => {
 
 async function getJobDetails() {
   const id = window.location.href.split("?")[1].split("=")[1];
-  const url = `http://127.0.0.1:8000/jobs/${id}`;
+  const url = `https://drf-basics.onrender.com/jobs/${id}`;
   const res = await fetch(url, {
     method: "GET",
     headers: {
@@ -54,12 +54,17 @@ async function getJobDetails() {
             <span class="font-bold">Job Description :</span>  ${new Date(
               data.postedAt
             ).toLocaleString()}
-        </p><a onclick="applyJob({
-          user: ${JSON.parse(localStorage.getItem("user")).user.id},
+        </p>
+        ${
+          JSON.parse(localStorage.getItem("user"))
+            ? `<a onclick="applyJob({
+          user: ${JSON.parse(localStorage.getItem("user"))?.user?.id},
           job: ${data.id}
         })" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-md mt-8 inline-block cursor-pointer">
             Apply Now
-        </a>
+        </a>`
+            : `<p></p>`
+        }
     `;
 
   container.insertAdjacentHTML("beforeend", element);
