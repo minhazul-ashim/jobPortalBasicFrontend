@@ -54,9 +54,10 @@
               </li>
               <li>
                 <a
-                  href="#"
-                  class="text-white hover:bg-gray-700 px-3 py-2 rounded"
-                  >Log out</a
+                  id="logoutBtn"
+                  class="text-white hover:bg-gray-700 px-3 py-2 rounded cursor-pointer"
+                >
+                  Log out</a
                 >
               </li>
             </ul>
@@ -68,7 +69,11 @@
     <!-- Login Form -->
     <main>
       <section class="container mx-auto mt-8 px-4 space-y-4">
-        <form class="bg-white shadow-md p-6 rounded-md" id="loginForm">
+        <form
+          class="bg-white shadow-md p-6 rounded-md"
+          id="loginForm"
+          onsubmit="submitForm(e)"
+        >
           <h2 class="text-2xl font-semibold mb-4">Login</h2>
           <div class="mb-4">
             <label for="username" class="block text-gray-700 font-bold mb-2"
