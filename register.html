@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style/tailwind.min.css" />
+    <link rel="stylesheet" href="./style/style.css" />
+    <title>Register - Skillo</title>
+</head>
+<body>
+    <!-- Navigation (same as in index.html) -->
+    <nav class="bg-gray-800">
+      <div class="container mx-auto px-4">
+        <div class="flex items-center justify-between h-16">
+          <div class="flex-shrink-0">
+            <a href="/index.html" class="text-white font-bold">Skillo</a>
+          </div>
+          <div class="hidden md:block">
+            <ul class="flex space-x-4" id="navLinks">
+              <li>
+                <a
+                  href="/index.html"
+                  class="text-white hover:bg-gray-700 px-3 py-2 rounded"
+                  >Home</a
+                >
+              </li>
+              <li>
+                <a
+                  href="./employee.html"
+                  class="text-white hover:bg-gray-700 px-3 py-2 rounded"
+                  >Employer</a
+                >
+              </li>
+              <li>
+                <a
+                  href="./seeker.html"
+                  class="text-white hover:bg-gray-700 px-3 py-2 rounded"
+                  >Seeker</a
+                >
+              </li>
+              <li>
+                <a
+                  href="./login.html"
+                  class="text-white hover:bg-gray-700 px-3 py-2 rounded"
+                  >Log in</a
+                >
+              </li>
+              <li>
+                <a
+                  href="./register.html"
+                  class="text-white hover:bg-gray-700 px-3 py-2 rounded"
+                  >Register</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-white hover:bg-gray-700 px-3 py-2 rounded"
+                  >Log out</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Register Form -->
+    <main>
+        <section class="container mx-auto mt-8 px-4 space-y-4">
+            <form class="bg-white shadow-md p-6 rounded-md" id="registerForm">
+                <h2 class="text-2xl font-semibold mb-4">Register</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="mb-4">
+                        <label for="username" class="block text-gray-700 font-bold mb-2">Username</label>
+                        <input type="text" id="username" name="username" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500" placeholder="Enter your username">
+                    </div>
+                    <div class="mb-4">
+                        <label for="email" class="block text-gray-700 font-bold mb-2">Email</label>
+                        <input type="email" id="email" name="email" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500" placeholder="Enter your email">
+                    </div>
+                    <div class="mb-4">
+                        <label for="first_name" class="block text-gray-700 font-bold mb-2">First Name</label>
+                        <input type="text" id="first_name" name="first_name" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500" placeholder="Enter your first name">
+                    </div>
+                    <div class="mb-4">
+                        <label for="last_name" class="block text-gray-700 font-bold mb-2">Last Name</label>
+                        <input type="text" id="last_name" name="last_name" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500" placeholder="Enter your last name">
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700 font-bold mb-2">Account Type</label>
+                        <label class="inline-flex items-center">
+                            <input type="radio" class="form-radio" name="account_type" value="employer">
+                            <span class="ml-2">Employer</span>
+                        </label>
+                        <label class="inline-flex items-center ml-6">
+                            <input type="radio" class="form-radio" name="account_type" value="job_seeker">
+                            <span class="ml-2">Job Seeker</span>
+                        </label>
+                    </div>
+                    <div class="mb-4">
+                        <label for="location" class="block text-gray-700 font-bold mb-2">Location</label>
+                        <input type="text" id="location" name="location" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500" placeholder="Enter your location">
+                    </div>
+                    <div class="mb-4">
+                        <label for="phone_number" class="block text-gray-700 font-bold mb-2">Phone Number</label>
+                        <input type="tel" id="phone_number" name="phone_number" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500" placeholder="Enter your phone number">
+                    </div>
+                    <div class="mb-4">
+                        <label for="password" class="block text-gray-700 font-bold mb-2">Password</label>
+                        <input type="password" id="password" name="password" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500" placeholder="Enter your password">
+                    </div>
+                    <div class="mb-4">
+                        <label for="confirm_password" class="block text-gray-700 font-bold mb-2">Confirm Password</label>
+                        <input type="password" id="confirm_password" name="confirm_password" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500" placeholder="Confirm your password">
+                    </div>
+                </div>
+                <button type="submit" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-md">Register</button>
+            </form>
+        </section>
+    </main>
+
+    <!-- Footer (same as in index.html) -->
+    <footer class="bg-gray-800 p-4 mt-8">
+        <div class="container mx-auto text-white text-center">
+            <p>&copy; 2024 Skillo. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript (if needed) -->
+    <script src="./scripts/register.js"></script>
+</body>
+</html>
