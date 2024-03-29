@@ -17,46 +17,47 @@
           </div>
           <div class="hidden md:block">
             <ul class="flex space-x-4" id="navLinks">
-              <li>
+              <li id="homeBtn">
                 <a
                   href="/index.html"
                   class="text-white hover:bg-gray-700 px-3 py-2 rounded"
                   >Home</a
                 >
               </li>
-              <li>
+              <li id="employerBtn">
                 <a
                   href="./employee.html"
                   class="text-white hover:bg-gray-700 px-3 py-2 rounded"
                   >Employer</a
                 >
               </li>
-              <li>
+              <li id="seekerBtn">
                 <a
                   href="./seeker.html"
                   class="text-white hover:bg-gray-700 px-3 py-2 rounded"
                   >Seeker</a
                 >
               </li>
-              <li>
+              <li id="loginBtn">
                 <a
                   href="./login.html"
                   class="text-white hover:bg-gray-700 px-3 py-2 rounded"
                   >Log in</a
                 >
               </li>
-              <li>
+              <li id="registerBtn">
                 <a
                   href="./register.html"
                   class="text-white hover:bg-gray-700 px-3 py-2 rounded"
                   >Register</a
                 >
               </li>
-              <li>
+              <li id="logoutBtn">
                 <a
-                  href="#"
-                  class="text-white hover:bg-gray-700 px-3 py-2 rounded"
-                  >Log out</a
+                  id="logoutBtn"
+                  class="text-white hover:bg-gray-700 px-3 py-2 rounded cursor-pointer"
+                >
+                  Log out</a
                 >
               </li>
             </ul>
@@ -90,14 +91,15 @@
       <!-- Jobs and Categories  -->
       <section>
         <h2 class="text-center text-3xl my-12 font-bold">Jobs & Categories</h2>
-        <div id="catJobsContainer" class="container mx-auto flex mt-4 space-x-4">
+        <div
+          id="catJobsContainer"
+          class="container mx-auto flex mt-4 space-x-4"
+        >
           <!--Categories -->
           <div class="w-1/4 overflow-y-auto border-r border-gray-200">
             <h2 class="text-2xl font-semibold mb-8">Categories</h2>
             <!-- Category-->
-            <ul id="catContainer">
-              
-            </ul>
+            <ul id="catContainer"></ul>
           </div>
 
           <!--Jobs -->
@@ -105,13 +107,10 @@
             <div
               id="jobContainer"
               class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"
-            >
-            </div>
+            ></div>
           </div>
         </div>
       </section>
-
-
     </main>
 
     <!-- Footer  -->
@@ -121,6 +120,7 @@
       </div>
     </footer>
 
+    <script src="./scripts/auth.js"></script>
     <script src="./scripts/main.js"></script>
   </body>
 </html>

@@ -17,46 +17,47 @@
           </div>
           <div class="hidden md:block">
             <ul class="flex space-x-4" id="navLinks">
-              <li>
+              <li id="homeBtn">
                 <a
                   href="/index.html"
                   class="text-white hover:bg-gray-700 px-3 py-2 rounded"
                   >Home</a
                 >
               </li>
-              <li>
+              <li id="employerBtn">
                 <a
                   href="./employee.html"
                   class="text-white hover:bg-gray-700 px-3 py-2 rounded"
                   >Employer</a
                 >
               </li>
-              <li>
+              <li id="seekerBtn">
                 <a
                   href="./seeker.html"
                   class="text-white hover:bg-gray-700 px-3 py-2 rounded"
                   >Seeker</a
                 >
               </li>
-              <li>
+              <li id="loginBtn">
                 <a
                   href="./login.html"
                   class="text-white hover:bg-gray-700 px-3 py-2 rounded"
                   >Log in</a
                 >
               </li>
-              <li>
+              <li id="registerBtn">
                 <a
                   href="./register.html"
                   class="text-white hover:bg-gray-700 px-3 py-2 rounded"
                   >Register</a
                 >
               </li>
-              <li>
+              <li id="logoutBtn">
                 <a
-                  href="#"
-                  class="text-white hover:bg-gray-700 px-3 py-2 rounded"
-                  >Log out</a
+                  id="logoutBtn"
+                  class="text-white hover:bg-gray-700 px-3 py-2 rounded cursor-pointer"
+                >
+                  Log out</a
                 >
               </li>
             </ul>
@@ -99,6 +100,7 @@
     </footer>
 
     <!-- JavaScript (if needed) -->
+    <script src="./scripts/auth.js"></script>
     <script src="./scripts/jobSeeker.js"></script>
   </body>
 </html>
