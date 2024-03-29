@@ -207,7 +207,6 @@ const employerPostedJobs = () => {
   container = document.getElementById("jobContainerEmployee");
   const user = JSON.parse(localStorage.getItem("user")).user;
   user.user_posted_job?.forEach((job) => {
-    console.log(user);
     const element = `
     <div class="bg-white shadow-md p-4 rounded-md flex flex-col justify-between hover:shadow-lg cursor-pointer">
         <div class="space-y-4">

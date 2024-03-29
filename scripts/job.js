@@ -15,6 +15,9 @@ const applyJob = async (obj) => {
   });
   const data = await res.json();
   console.log(data);
+  if (data) {
+    window.alert("Applied for this job");
+  }
 };
 
 async function getJobDetails() {
@@ -48,17 +51,14 @@ async function getJobDetails() {
             }
         </p>
         <p class="text-lg text-gray-800" id="JobDescription">
-            <span class="font-bold">Category :</span>  ${data.category.name}
-        </p>
-        <p class="text-lg text-gray-800" id="JobDescription">
             <span class="font-bold">Job Description :</span>  ${new Date(
               data.postedAt
             ).toLocaleString()}
         </p>
-        <a onclick="() => ${applyJob({
-          user: JSON.parse(localStorage.getItem("user")).user.id,
-          job: data.id,
-        })}" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-md mt-8 inline-block cursor-pointer">
+        <a onclick="applyJob({
+          user: ${JSON.parse(localStorage.getItem("user")).user.id},
+          job: ${data.id}
+        })" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-md mt-8 inline-block cursor-pointer">
             Apply Now
         </a>
     `;

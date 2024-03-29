@@ -55,7 +55,8 @@ async function submitForm(e) {
         "Access-Control-Allow-Origin": "http://127.0.0.1:5500",
       },
     });
-    const user = await res.json();
+      const user = await res.json();
+      console.log(user)
     window.localStorage.setItem("token", data.token);
     window.localStorage.setItem("user_id", data.userId);
     window.localStorage.setItem("user", JSON.stringify(user));
