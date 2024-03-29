@@ -2,24 +2,40 @@ window.onload = () => {
   getJobDetails();
 };
 
-function getJobDetails() {
+async function getJobDetails() {
+  const id = window.location.href.split("?")[1].split("=")[1];
+  const url = `http://127.0.0.1:8000/jobs/${id}`;
+  const res = await fetch(url, {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+      "Access-Control-Allow-Origin": "http://127.0.0.1:5500",
+    },
+  });
+  const data = await res.json();
   const container = document.getElementById("detailContainer");
-
   const element = `
         <h1 class="text-3xl font-semibold mb-4" id="jobTitle">
-            Job Title
+            ${data.title}
         </h1>
         <p class="text-lg text-gray-800" id="jobLocation">
-            <span class="font-bold">Company : </span> NeroBytes Ltd
+            <span class="font-bold">Company : </span> ${data.company}
         </p>
         <p class="text-lg text-gray-800" id="jobLocation">
-            <span class="font-bold">Location :</span> Dhaka, Bangladesh
+            <span class="font-bold">Location :</span>  ${data.location}
         </p>
         <p class="text-lg text-gray-800" id="jobType">
-            <span class="font-bold">Type :</span> Full-time
+            <span class="font-bold">Type :</span>  ${data.jobType}
         </p>
         <p class="text-lg text-gray-800" id="JobDescription">
-            <span class="font-bold">Job Description :</span> Job Description
+            <span class="font-bold">Job Description :</span>  ${
+              data.description
+            }
+        </p>
+        <p class="text-lg text-gray-800" id="JobDescription">
+            <span class="font-bold">Job Description :</span>  ${new Date(
+              data.postedAt
+            ).toLocaleString()}
         </p>
         <a href="#" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-md mt-8 inline-block">
             Apply Now

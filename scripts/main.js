@@ -1,6 +1,6 @@
 window.onload = () => {
-  injectJobs();
   injectCats();
+  injectJobs();
 };
 
 function genCatCard(container, cat) {
@@ -10,24 +10,19 @@ function genCatCard(container, cat) {
   container.insertAdjacentHTML("beforeend", card);
 }
 
-function injectCats() {
-  const categoriesData = [
-    {
-      id: 1,
-      name: "Category 1",
+async function injectCats() {
+  const url = "http://127.0.0.1:8000/category";
+  const res = await fetch(url, {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+      "Access-Control-Allow-Origin": "http://127.0.0.1:5500",
     },
-    {
-      id: 2,
-      name: "Category 2",
-    },
-    {
-      id: 3,
-      name: "Category 3",
-    },
-  ];
+  });
+  const data = await res.json();
 
   const container = document.getElementById("catContainer");
-  categoriesData.forEach((el) => genCatCard(container, el));
+  data.forEach((el) => genCatCard(container, el));
 }
 
 function genJobCard(container, job) {
@@ -57,33 +52,16 @@ function genJobCard(container, job) {
   container.insertAdjacentHTML("beforeend", card);
 }
 
-function injectJobs() {
-  const jobsData = [
-    {
-      id: 1,
-      title: "Software Engineer",
-      description:
-        "Exciting opportunity for a software engineer to join our dynamic team.",
+async function injectJobs() {
+  const url = "http://127.0.0.1:8000/jobs";
+  const res = await fetch(url, {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+      "Access-Control-Allow-Origin": "http://127.0.0.1:5500",
     },
-    {
-      id: 2,
-      title: "Marketing Specialist",
-      description:
-        "Seeking a creative marketing specialist with experience in digital marketing.",
-    },
-    {
-      id: 3,
-      title: "Data Analyst",
-      description:
-        "Join our analytics team and help drive data-driven decisions.",
-    },
-    {
-      id: 4,
-      title: "Data Analyst",
-      description:
-        "Join our analytics team and help drive data-driven decisions.",
-    },
-  ];
+  });
+  const data = await res.json();
   const container = document.getElementById("jobContainer");
-  jobsData.forEach((el) => genJobCard(container, el));
+  data.forEach((el) => genJobCard(container, el));
 }
