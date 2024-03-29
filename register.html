@@ -68,7 +68,7 @@
     <!-- Register Form -->
     <main>
         <section class="container mx-auto mt-8 px-4 space-y-4">
-            <form class="bg-white shadow-md p-6 rounded-md" id="registerForm">
+            <form class="bg-white shadow-md p-6 rounded-md" id="registerForm" onsubmit="submitForm(e)">
                 <h2 class="text-2xl font-semibold mb-4">Register</h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div class="mb-4">
@@ -94,7 +94,7 @@
                             <span class="ml-2">Employer</span>
                         </label>
                         <label class="inline-flex items-center ml-6">
-                            <input type="radio" class="form-radio" name="account_type" value="job_seeker">
+                            <input type="radio" class="form-radio" name="account_type" value="seeker">
                             <span class="ml-2">Job Seeker</span>
                         </label>
                     </div>
